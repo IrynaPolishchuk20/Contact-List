@@ -1,0 +1,96 @@
+.rain404-container{
+  position: relative;
+  height: 94.85vh;
+  background: linear-gradient(to bottom, #3a3a52, #1c1c2b);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', sans-serif;
+  color: #dcdde1;
+  text-align: center;
+  padding: 20px;
+  margin: 0;
+}
+
+.rain404-content{
+  position: relative;
+  z-index: 2;
+  max-width: 500px;
+}
+
+.rain404-content h1{
+  font-size: 36px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.rain404-content p{
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #a6a6b8;
+  font-style: italic;
+}
+
+.rain404-content button{
+  background-color: #57606f;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 30px;
+  color: #f1f2f6;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.rain404-content button:hover{
+  background-color: #374253;
+}
+
+.rain{
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.rain::before, .rain::after{
+  content: '';
+  position: absolute;
+  top: -100px;
+  width: 2px;
+  height: 80px;
+  background: linear-gradient(transparent, #a6a6b8);
+  animation: fall 1s linear infinite;
+  opacity: 0.4;
+  border-radius: 50%;
+}
+
+.rain::before{
+  left: 30%;
+  animation-delay: 0s;
+  height: 90px;
+  opacity: 0.3;
+}
+
+.rain::after{
+  left: 70%;
+  animation-delay: 0.5s;
+  height: 70px;
+  opacity: 0.5;
+}
+
+@keyframes fall{
+  0%{
+    transform: translateY(-100px);
+    opacity: 0.4;
+  }
+  100%{
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
