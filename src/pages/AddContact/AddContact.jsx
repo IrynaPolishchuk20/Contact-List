@@ -6,7 +6,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik'
 import { v4 as uuidv4 } from 'uuid';
 import { useNavigate } from "react-router";
 
-export default function AddContact() {
+export default function AddContact({addNewContact}) {
     const navigate = useNavigate();
 
     const initialValues = {
@@ -34,10 +34,12 @@ export default function AddContact() {
 
     const handleSubmit = (values) => {
         console.log(values);
+        addNewContact(values)
         navigate('/')
     }
 
     return(
+
         <div className="addContact">
             <div className="modal-header">
                 <h1>Add New Contact</h1>
@@ -66,7 +68,7 @@ export default function AddContact() {
                                 </div>
                                 <div>
                                     <label htmlFor="avatar">Avatar</label>
-                                    <Field type='text' name='avatar' id='avatar'/>
+                                    <Field type='number' max={99} min={0} name='avatar' id='avatar'/>
                                     <ErrorMessage name='avatar' component='p' className='error'/>
                                 </div>
                                 <div>
