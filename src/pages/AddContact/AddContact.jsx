@@ -22,10 +22,10 @@ export default function AddContact() {
     }
 
     const validationSchema = Yup.object().shape({
-        firstName: Yup.string().required('First Name is required').min(2, 'Min 2 symbols').max(10, 'Max 10 symbols'),
-        lastName: Yup.string().required('Last Name is required').min(2, 'Min 2 symbols').max(10, 'Max 10 symbols'),
+        firstName: Yup.string().required('First Name is required').min(2, 'Min 2 symbols').max(10, 'Max 20 symbols').matches(/^[A-Za-zА-Яа-яЁёІіЇїЄєҐґ'’\s-]+$/, 'Only letters allowed').trim(),
+        lastName: Yup.string().required('Last Name is required').min(2, 'Min 2 symbols').max(10, 'Max 20 symbols').matches(/^[A-Za-zА-Яа-яЁёІіЇїЄєҐґ'’\s-]+$/, 'Only letters allowed').trim(),
         phone: Yup.string().required('Phone is required').min(9, 'Min 9 symbols'),
-        email: Yup.string().email('Invalid email').required('Email is required'),
+        email: Yup.string().email('Invalid email').required('Email is required').trim(),
         avatar: Yup.string().required('Avatar is required'),
         gender: Yup.string().oneOf(['men','women'], 'Invalid gender').required('Gender is required'),
         status: Yup.string().oneOf(['work','family', 'friends', 'others'], 'Invalid status').required('Status is required'),

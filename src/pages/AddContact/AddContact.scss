@@ -1,13 +1,12 @@
 .addContact{
   position: relative;
-  background-color: rgba(134, 134, 182, 0.85); 
+  background-color: rgba(134, 134, 182, 0.5); 
   color: white;
   padding: 40px;
   border-radius: 20px;
-  box-shadow: 0 0 30px rgba(99, 102, 241, 0.4);
+  box-shadow: 0 0 30px rgba(99, 102, 241, 0.6);
   width: 600px;
   margin: 50px auto;
-  z-index: 2;
   font-family: Arial, sans-serif;
 }
 
@@ -49,7 +48,7 @@
   }
 
   .error{
-    color: #f87171;
+    color: #e95757;
     font-size: 14px;
     margin-top: -15px;
     margin-bottom: 10px;
