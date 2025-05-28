@@ -59,3 +59,16 @@
   animation-duration: 3.7s;
   animation-delay: 0.8s;
 }
+
+
+.addContact, .contactList, .editContact{
+  position: relative;
+  background-color: rgba(134, 134, 182, 0.5); 
+  color: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(99, 102, 241, 0.6);
+  width: 600px;
+  margin: 50px auto;
+  font-family: Arial, sans-serif;
+}

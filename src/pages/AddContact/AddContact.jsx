@@ -46,12 +46,12 @@ export default function AddContact() {
                             <Form>
                                 <div>
                                     <label htmlFor="firstName">First name</label>
-                                    <Field type='text' name='firstName' id='firstName'/>
+                                    <Field type='text' name='firstName' id='firstName' placeholder='Enter your first name' autoComplete="new-password"/>
                                     <ErrorMessage name='firstName' component='p' className='error'/>
                                 </div>
                                 <div>
                                     <label htmlFor="lastName">Last name</label>
-                                    <Field type='text' name='lastName' id='lastName'/>
+                                    <Field type='text' name='lastName' id='lastName' placeholder='Enter your last name' autoComplete="new-password"/>
                                     <ErrorMessage name='lastName' component='p' className='error'/>
                                 </div>
                                 <div>
@@ -61,7 +61,7 @@ export default function AddContact() {
                                 </div>
                                 <div>
                                     <label htmlFor="email">Email</label>
-                                    <Field type='email' name='email' id='email'/>
+                                    <Field type='email' name='email' id='email'  autoComplete="off"/>
                                     <ErrorMessage name='email' component='p' className='error'/>
                                 </div>
                                 <div>

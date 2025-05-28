@@ -3,6 +3,8 @@ import './EditContact.scss'
 
 export default function EditContact(){
     return(
-        <h1>EditContact</h1>
+        <div className='editContact'>
+             <h1>EditContact</h1>
+        </div>
     )
 }

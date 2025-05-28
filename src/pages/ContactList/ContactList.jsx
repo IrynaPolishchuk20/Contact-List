@@ -2,6 +2,9 @@ import './ContactList.scss'
 
 export default function ContactList(){
     return(
-        <h1>ContactList</h1>
+        <div className='contactList'>
+             <h1>ContactList</h1>
+        </div>
+       
     )
 }
