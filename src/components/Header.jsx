@@ -1,11 +1,11 @@
 import { Link } from "react-router";
- 
+
 export default function Header() {
     return(
         <header className="container">
             <div className="row">
                 <div className="col-12">
-                    <nav className="navbar bg-body-tertiary">
+                    <nav className="navbar bg-body-tertiary rounded shadow">
                         <div className="container-fluid">
                            <div className="navbar-brand">
                                 <Link className="navbar-brand" to="/">

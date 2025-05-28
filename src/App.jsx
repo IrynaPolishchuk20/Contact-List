@@ -1,4 +1,5 @@
-import './App.css'
+import './App.scss'
+import BackgroundStars from './components/BackgroundStars'
 
 import {BrowserRouter as Router, Routes, Route} from 'react-router'
 
@@ -11,15 +12,20 @@ import Header from './components/Header'
 function App() {
 
   return (
-    <Router>
-      <Header/>
-      <Routes>
-        <Route path='/' element={<ContactList/>}/>
-        <Route path='/add-contact' element={<AddContact/>}/>
-        <Route path='/edit-contact' element={<EditContact/>}/>
-        <Route path='*' element={<NotFound/>}/>
-      </Routes>
-    </Router>
+     <>
+      <BackgroundStars />
+        <Router>
+        <Header/>
+        <Routes>
+          <Route path='/' element={<ContactList/>}/>
+          <Route path='/add-contact' element={<AddContact/>}/>
+          <Route path='/edit-contact' element={<EditContact/>}/>
+          <Route path='*' element={<NotFound/>}/>
+        </Routes>
+      </Router>
+    </>
+
+    
   )
 }
 
