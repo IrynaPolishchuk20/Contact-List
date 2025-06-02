@@ -1,5 +1,9 @@
 @import url(../node_modules/bootstrap/dist/css/bootstrap.min.css);
 
+body{
+  margin: 0;
+  overflow: hidden;
+}
 
 .background { 
   position: fixed;
@@ -11,7 +15,6 @@
   opacity: 1;
   pointer-events: none;
   z-index: -1;
-  overflow: hidden;
 }
 
 @keyframes twinkle {

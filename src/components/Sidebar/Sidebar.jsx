@@ -17,9 +17,9 @@ export default function Sidebar({stor}) {
   console.log(statusCounts);
 
     return(
-        <aside className="container border-end">
+        <aside className="container">
         <div className="row containerSidebar">
-          <div className="col-12 ">
+          <div className="col-12">
             <div className="contacts-labels">
               <div className="All mb-5 mt-4 d-flex justify-content-between">
                 <span>All contacts:</span><span>{totalContacts}</span>

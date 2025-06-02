@@ -1,6 +1,6 @@
 .containerBlock {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 24px;
   padding: 40px;
   box-sizing: border-box;
@@ -18,8 +18,8 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
+    transform: translateY(-6px);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
 }
 }
 
@@ -71,24 +71,24 @@
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 
         &:last-child{
-        background-color: #ff0055;
-        box-shadow: 0 0 10px #ff0055;
+          background-color: #ff0055;
+          box-shadow: 0 0 10px #ff0055;
         }
 
         &:last-child:hover{
-        background-color: #cc0044;
-        box-shadow: 0 0 15px #ff0055;
+          background-color: #cc0044;
+          box-shadow: 0 0 15px #ff0055;
         }
 
         &:first-child{
-        background-color: #00ffff;
-        color: #000;
-        box-shadow: 0 0 10px #00ffff;
+          background-color: #00ffff;
+          color: #000;
+          box-shadow: 0 0 10px #00ffff;
         }
 
         &:first-child:hover{
-        background-color: #00cccc;
-        box-shadow: 0 0 15px #00ffff;
+          background-color: #00cccc;
+          box-shadow: 0 0 15px #00ffff;
         }
     }
 }
