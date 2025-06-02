@@ -7,7 +7,7 @@ import { useNavigate} from  'react-router'
 import './ContactList.scss'
 
 
-export default function ContactList({store, onDelete}){
+export default function ContactList({stor, onDelete}){
     const navigate = useNavigate()
     const editContact = (id) => {
         navigate(`/edit-contact/${id}`)
@@ -16,10 +16,10 @@ export default function ContactList({store, onDelete}){
         <div className='contactList'>
              <div className="row">
                 <div className="col-3">
-                    <Sidebar/>
+                    <Sidebar stor={stor}/>
                 </div>
                 <div className="col-9">
-                    <ContactItem store ={store} onDelete={onDelete} editContact={editContact}/>
+                    <ContactItem stor ={stor} onDelete={onDelete} editContact={editContact}/>
                 </div>
              </div>
         </div>

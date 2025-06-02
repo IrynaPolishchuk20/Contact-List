@@ -11,7 +11,7 @@ import NotFound from './pages/NotFound/NotFound'
 import Header from './components/Header/Header'
 
 function App() {
-  const [store, setStore] = useState(
+  const [stor, setStore] = useState(
     [
       {
         id: '3434ec03-aa58-4419-9ae4-b73a6742f6c0',
@@ -31,8 +31,8 @@ function App() {
         phone: '09650254659',
         email: 'zdfcbx@gmail.com',
         avatar: '7',
-        gender: 'women',
-        status: 'others',
+        gender: 'men',
+        status: 'family',
         favorite: true
       },
       {
@@ -43,6 +43,17 @@ function App() {
         email: 'zhbhbk@gmail.com',
         avatar: '55',
         gender: 'women',
+        status: 'work',
+        favorite: true
+      },
+      {
+        id: '3434ec03-aa58-4419-9ae4-b73a6742f6c2',
+        firstName: 'zhbzdh',
+        lastName: 'zefhbdxfv',
+        phone: '09650254650',
+        email: 'zhbhbk@gmail.com',
+        avatar: '60',
+        gender: 'men',
         status: 'others',
         favorite: true
       }
@@ -63,7 +74,7 @@ function App() {
         <Router>
           <Header/>
             <Routes>
-              <Route path='/' element={<ContactList store={store} onDelete={deleteContact}/>}/>
+              <Route path='/' element={<ContactList stor={stor} onDelete={deleteContact}/>}/>
               <Route path='/add-contact' element={<AddContact addNewContact={handleNewContact} />}/>
               <Route path='/edit-contact/:id' element={<EditContact/>}/>
               <Route path='*' element={<NotFound/>}/>

@@ -10,6 +10,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: rgba(134, 134, 182, 0.5); 
   border: 2px solid rgba(0, 255, 255, 0.3);
   border-radius: 16px;
   box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
@@ -21,8 +22,6 @@
   box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
 }
 }
-
-
 
 .contactImg{
   width: 100px;
@@ -38,20 +37,20 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
-}
 
-.contactContent h3{
-  margin: 0;
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: #00ffff;
-  text-shadow: 0 0 5px #00ffff;
-}
+    h3{
+      margin: 0;
+      font-size: 24px;
+      font-weight: bold;
+      color: #00ffff;
+      text-shadow: 0 0 5px #00ffff;
+    }
 
-.contactContent p{
-  margin: 2px 0;
-  font-size: 0.95rem;
-  color: #ccc;
+    p{
+      margin: 2px 0;
+      font-size: 16px;
+      color: #ccc;
+    }
 }
 
 .btnGroup{
@@ -65,29 +64,29 @@
     border: none;
     border-radius: 8px;
     font-weight: bold;
-    font-size: 0.95rem;
+    font-size: 14px;
     cursor: pointer;
     color: #fff;
     text-shadow: 0 0 3px #000;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 
-        &:first-child{
+        &:last-child{
         background-color: #ff0055;
         box-shadow: 0 0 10px #ff0055;
         }
 
-        &:first-child:hover{
+        &:last-child:hover{
         background-color: #cc0044;
         box-shadow: 0 0 15px #ff0055;
         }
 
-        &:last-child{
+        &:first-child{
         background-color: #00ffff;
         color: #000;
         box-shadow: 0 0 10px #00ffff;
         }
 
-        &:last-child:hover{
+        &:first-child:hover{
         background-color: #00cccc;
         box-shadow: 0 0 15px #00ffff;
         }
