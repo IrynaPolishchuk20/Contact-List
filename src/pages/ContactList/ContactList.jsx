@@ -13,7 +13,7 @@ export default function ContactList({stor, onDelete}){
         navigate(`/edit-contact/${id}`)
     }
     return(
-        <div className='contactList'>
+        <div className='container contactList'>
              <div className="row">
                 <div className="col-3">
                     <Sidebar stor={stor}/>
