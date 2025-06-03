@@ -1,0 +1,30 @@
+.containerHeader{
+    margin: 5px;
+    background-color: rgba(134, 134, 182, 0.5); 
+    border-radius: 16px;
+    border: 2px solid rgba(0, 255, 255, 0.3);
+    
+    .navbar-brand{
+        color: #fff;
+        &:hover, 
+        &:focus{
+            color: #00ffff;
+        }
+    }
+
+    .btn{
+        color: #00ffff;
+        border: 1px solid #00ffff;
+        font-size: 16px;
+        &:hover{
+            box-shadow: 0 0 15px #00ffff;
+            background-color: #00ffff;
+            color: black;
+        }
+    }
+
+    .form-control{
+       border: none;
+       border-radius: 8px;
+    }
+}
