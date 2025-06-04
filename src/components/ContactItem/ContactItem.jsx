@@ -1,10 +1,13 @@
 import './ContactItem.scss'
+import { Link } from 'react-router'
 
-export default function ContactItem({stor, onDelete, editContact}){
+export default function ContactItem({stor, onDelete}){
+    
+    const filteredContacts = stor.search  ? stor.contacts.filter(contact => `${contact.firstName} ${contact.lastName} ${contact.email} ${contact.phone}`.toLowerCase().includes(stor.search.toLowerCase()) ) : stor.contacts
     
     return(
     <div className='container containerBlock'>
-        {stor.map(contact => (
+        {filteredContacts.map(contact => (
             <div className='contackBlock' key={contact.id}>
                 <img className="contactImg" src={`https://randomuser.me/api/portraits/${contact.gender}/${contact.avatar}.jpg`} alt=""/>
                     <div className="contactContent">
@@ -13,9 +16,7 @@ export default function ContactItem({stor, onDelete, editContact}){
                         <p>{contact.phone} </p>
                         <p>{contact.status} </p>
                         <div className="btnGroup">
-                            <button className="contactBtn" onClick={() => editContact(contact.id)}>Edit</button>
-
-                            {/* <Link to={`/edit-contct/${contact.id}`}><button className="contactBtn">Edit</button></Link> */}
+                            <Link to={`/edit-contct/${contact.id}`}><button className="contactBtn">Edit</button></Link>
                             <button className="contactBtn" onClick={() => onDelete(contact.id)}>Delete</button>
                         </div>
                     </div>

@@ -1,7 +1,7 @@
 import './Sidebar.scss'
 
 export default function Sidebar({stor}) {
-    const totalContacts = stor.length
+    const totalContacts = stor.contacts.length
 
     const statusCounts={
         work: 0,
@@ -10,13 +10,11 @@ export default function Sidebar({stor}) {
         friends: 0,
         others:  0
     }
-   stor.forEach(contact => {
+   stor.contacts.forEach(contact => {
     statusCounts[contact.status] +=1
   });
  
-  console.log(statusCounts);
-
-    return(
+   return(
         <aside className="container">
         <div className="row containerSidebar">
           <div className="col-12">

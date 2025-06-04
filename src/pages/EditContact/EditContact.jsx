@@ -10,7 +10,7 @@ export default function EditContact({stor, editContact}){
     const {id} = useParams()
     const navigate = useNavigate()
 
-    const contact = stor.find(contact => contact.id ===id)
+    const contact = stor.contacts.find(contact => contact.id ===id)
 
     const initialValues = {...contact}
 

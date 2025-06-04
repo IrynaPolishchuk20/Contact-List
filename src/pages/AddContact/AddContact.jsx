@@ -1,6 +1,5 @@
 import './AddContact.scss'
 
-import * as Yup from 'yup'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import {contactValidationSchema} from '../../validation/validation'
 
@@ -77,6 +76,7 @@ export default function AddContact({addNewContact}) {
                                         <option value="work">Work</option>
                                         <option value="family">Family</option>
                                         <option value="friends">Friends</option>
+                                        <option value="private">Private</option>
                                         <option value="others">Others</option>
                                     </Field>
                                     <ErrorMessage name='status' component='p' className='error'/>

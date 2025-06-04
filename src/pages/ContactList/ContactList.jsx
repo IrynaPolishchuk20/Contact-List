@@ -19,7 +19,7 @@ export default function ContactList({stor, onDelete}){
                     <Sidebar stor={stor}/>
                 </div>
                 <div className="col-9">
-                    <ContactItem stor ={stor} onDelete={onDelete} editContact={editContact}/>
+                    <ContactItem stor ={stor} onDelete={onDelete}/>
                 </div>
              </div>
         </div>
