@@ -65,7 +65,16 @@ function App() {
   }
 
   const deleteContact = (id) => {
-    setStore(prevDel => prevDel.filter(contact => contact.id !== id))
+    setStore(prevStore => prevStore.filter(contact => contact.id !== id))
+  }
+
+  const handleEditContact = (updateContact) => {
+    setStore(prevStore => prevStore.map(contact => {
+      if (contact.id === updateContact.id) {
+        return {...contact, ...updateContact}
+      }
+      return contact
+    }))
   }
 
   return (
@@ -76,7 +85,7 @@ function App() {
             <Routes>
               <Route path='/' element={<ContactList stor={stor} onDelete={deleteContact}/>}/>
               <Route path='/add-contact' element={<AddContact addNewContact={handleNewContact} />}/>
-              <Route path='/edit-contact/:id' element={<EditContact/>}/>
+              <Route path='/edit-contact/:id' element={<EditContact editContact={handleEditContact} stor={stor}/>}/>
               <Route path='*' element={<NotFound/>}/>
             </Routes>
         </Router>

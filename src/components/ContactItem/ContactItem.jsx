@@ -14,6 +14,8 @@ export default function ContactItem({stor, onDelete, editContact}){
                         <p>{contact.status} </p>
                         <div className="btnGroup">
                             <button className="contactBtn" onClick={() => editContact(contact.id)}>Edit</button>
+
+                            {/* <Link to={`/edit-contct/${contact.id}`}><button className="contactBtn">Edit</button></Link> */}
                             <button className="contactBtn" onClick={() => onDelete(contact.id)}>Delete</button>
                         </div>
                     </div>
