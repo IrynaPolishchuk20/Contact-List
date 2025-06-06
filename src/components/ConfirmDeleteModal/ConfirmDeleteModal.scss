@@ -1,0 +1,42 @@
+.custom-modal .modal-content {
+  background-color: #121212;
+  color: #fff;
+  border-radius: 16px;
+  border: 1px solid #333;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+}
+
+.custom-modal .modal-header,
+.custom-modal .modal-footer {
+  border: none;
+  background-color: #1e1e1e;
+}
+
+.custom-modal .modal-title {
+  font-size: 24px;
+  color: #f87171;
+}
+
+.custom-modal .btn-danger {
+  background-color: #dc3545;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+}
+
+.custom-modal .btn-secondary {
+  background-color: #6c757d;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+}
+
+.custom-modal .btn:hover {
+  opacity: 0.9;
+}
+
+.modal-header .btn-close{
+  width: 15px;
+  position: absolute;
+  right: 15px;
+}

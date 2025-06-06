@@ -3,6 +3,7 @@ import BackgroundStars from './components/BackgroundStars/BackgroundStars'
 
 import {BrowserRouter as Router, Routes, Route} from 'react-router'
 import { useState } from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 import ContactList from './pages/ContactList/ContactList'
 import AddContact from './pages/AddContact/AddContact'
