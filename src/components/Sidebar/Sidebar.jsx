@@ -1,7 +1,18 @@
 import './Sidebar.scss'
+import { useSelector } from "react-redux"
 
-export default function Sidebar({stor}) {
-    const filteredContacts = stor.search  ? stor.contacts.filter(contact => `${contact.firstName} ${contact.lastName} ${contact.email} ${contact.phone}`.toLowerCase().includes(stor.search.toLowerCase()) ) : stor.contacts
+
+export default function Sidebar() {
+    const contacts = useSelector(state => state.contacts)
+
+    const search = false
+    const filteredContacts = search
+        ? contacts.filter(contact =>
+            `${contact.firstName} ${contact.lastName} ${contact.phone} ${contact.email} ${contact.status}`
+            .toLowerCase()
+            .includes(search.toLowerCase())
+        )
+        : contacts
     
     const totalContacts = filteredContacts.length
 
@@ -12,9 +23,10 @@ export default function Sidebar({stor}) {
         friends: 0,
         others:  0
     }
-   filteredContacts.forEach(contact => {
-    statusCounts[contact.status] +=1
-  });
+
+    filteredContacts.forEach(contact => {
+      statusCounts[contact.status] +=1
+    })
  
    return(
         <aside className="container">

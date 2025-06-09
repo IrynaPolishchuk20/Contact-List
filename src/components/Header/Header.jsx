@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import './Header.scss'
 
-export default function Header({searchBySymbols}) {
+export default function Header() {
     return(
         <header className="container">
             <div className="row containerHeader">
@@ -18,7 +18,7 @@ export default function Header({searchBySymbols}) {
                            </div>
  
                             <form className="d-flex" role="search">
-                                <input onInput = {e => searchBySymbols(e.target.value)} className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                                <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
                             </form>
                         </div>
                     </nav>

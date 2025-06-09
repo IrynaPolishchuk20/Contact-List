@@ -4,22 +4,29 @@ import { useState } from 'react'
 import DeleteModal from '../DeleteModal/DeleteModal'
 import InfoContact from '../InfoContact/InfoContact'
 
+import { useSelector, useDispatch } from "react-redux";
+import { deleteContact } from '../../redux/actions'
 
-export default function ContactItem({stor, onDelete}){
+
+export default function ContactItem(){
+    const contacts = useSelector(state => state.contacts)
+    const dispatch = useDispatch()
+    
     const [modalShow, setModalShow] = useState(false)
     const [contactToDelete, setContactToDelete] = useState(null)
     const [selectedContact, setSelectedContact] = useState(null)
 
-    const filteredContacts = stor.search
-        ? stor.contacts.filter(contact =>
+    const search = false
+
+    const filteredContacts = search
+        ? contacts.filter(contact =>
             `${contact.firstName} ${contact.lastName} ${contact.phone} ${contact.email} ${contact.status}`
             .toLowerCase()
-            .includes(stor.search.toLowerCase())
+            .includes(search.toLowerCase())
         )
-        : stor.contacts
+        : contacts
 
-    const handleDeleteClick = (e, contact) => {
-        e.stopPropagation()
+    const handleDeleteClick = (contact) => {
         setContactToDelete(contact)
         setModalShow(true)
     }
@@ -47,9 +54,8 @@ export default function ContactItem({stor, onDelete}){
                         <div className="btnGroup">
                             <Link to={`/edit-contact/${contact.id}` }><button className="contactBtn" >Edit</button></Link>
                             <button className="contactBtn"
-                                onClick={(e) => {
-                                e.stopPropagation();  
-                                handleDeleteClick(e, contact);
+                                onClick={() => {
+                                dispatch(deleteContact(contact.id));
                                 }}>Delete
                             </button>
                         </div>
@@ -58,15 +64,15 @@ export default function ContactItem({stor, onDelete}){
         ))}
 
         <DeleteModal
-        show={modalShow}
-        onHide={() => setModalShow(false)}
-        onConfirm={handleConfirmDelete}
+            show={modalShow}
+            onHide={() => setModalShow(false)}
+            onConfirm={handleConfirmDelete}
         />
 
         <InfoContact
-        show={!!selectedContact}
-        onHide={() => setSelectedContact(null)}
-        contact={selectedContact}
+            show={!!selectedContact}
+            onHide={() => setSelectedContact(null)}
+            contact={selectedContact}
         />
 
     </div>

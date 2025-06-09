@@ -5,9 +5,12 @@ import {contactValidationSchema} from '../../validation/validation'
 
 import { v4 as uuidv4 } from 'uuid';
 import { useNavigate } from "react-router";
+import { useDispatch } from "react-redux"
+import { addContact } from '../../redux/actions'
 
-export default function AddContact({addNewContact}) {
-    const navigate = useNavigate();
+export default function AddContact() {
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
 
     const initialValues = {
         id: uuidv4(),
@@ -22,8 +25,7 @@ export default function AddContact({addNewContact}) {
     }
 
     const handleSubmit = (values) => {
-        console.log(values);
-        addNewContact(values)
+        dispatch(addContact(values))
         navigate('/')
     }
 
