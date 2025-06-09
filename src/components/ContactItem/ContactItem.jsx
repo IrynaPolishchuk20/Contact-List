@@ -18,7 +18,8 @@ export default function ContactItem({stor, onDelete}){
         )
         : stor.contacts
 
-    const handleDeleteClick = (contact) => {
+    const handleDeleteClick = (e, contact) => {
+        e.stopPropagation()
         setContactToDelete(contact)
         setModalShow(true)
     }
@@ -44,8 +45,13 @@ export default function ContactItem({stor, onDelete}){
                         <p>{contact.phone} </p>
                         <p>{contact.status} </p>
                         <div className="btnGroup">
-                            <Link to={`/edit-contct/${contact.id}`}><button className="contactBtn">Edit</button></Link>
-                            <button className="contactBtn" onClick={() => handleDeleteClick(contact)}>Delete</button>
+                            <Link to={`/edit-contact/${contact.id}` }><button className="contactBtn" >Edit</button></Link>
+                            <button className="contactBtn"
+                                onClick={(e) => {
+                                e.stopPropagation();  
+                                handleDeleteClick(e, contact);
+                                }}>Delete
+                            </button>
                         </div>
                     </div>
             </div>
