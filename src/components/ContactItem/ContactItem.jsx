@@ -1,12 +1,14 @@
 import './ContactItem.scss'
 import { Link } from 'react-router'
 import { useState } from 'react'
-import ConfirmDeleteModal from '../ConfirmDeleteModal/ConfirmDeleteModal'
+import DeleteModal from '../DeleteModal/DeleteModal'
+import InfoContact from '../InfoContact/InfoContact'
 
 
 export default function ContactItem({stor, onDelete}){
     const [modalShow, setModalShow] = useState(false)
     const [contactToDelete, setContactToDelete] = useState(null)
+    const [selectedContact, setSelectedContact] = useState(null)
 
     const filteredContacts = stor.search
         ? stor.contacts.filter(contact =>
@@ -27,11 +29,14 @@ export default function ContactItem({stor, onDelete}){
         setContactToDelete(null)
         }
     }
+    const handleShowInfo = (contact) => {
+        setSelectedContact(contact)
+    }
 
     return(
     <div className='container containerBlock'>
         {filteredContacts.map(contact => (
-            <div className='contackBlock' key={contact.id}>
+            <div className='contackBlock' key={contact.id} onClick={() => handleShowInfo(contact)}>
                 <img className="contactImg" src={`https://randomuser.me/api/portraits/${contact.gender}/${contact.avatar}.jpg`} alt=""/>
                     <div className="contactContent">
                         <h3>{contact.firstName} {contact.lastName}</h3>
@@ -46,10 +51,16 @@ export default function ContactItem({stor, onDelete}){
             </div>
         ))}
 
-        <ConfirmDeleteModal
+        <DeleteModal
         show={modalShow}
         onHide={() => setModalShow(false)}
         onConfirm={handleConfirmDelete}
+        />
+
+        <InfoContact
+        show={!!selectedContact}
+        onHide={() => setSelectedContact(null)}
+        contact={selectedContact}
         />
 
     </div>

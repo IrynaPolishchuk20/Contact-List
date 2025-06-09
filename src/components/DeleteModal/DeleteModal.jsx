@@ -1,7 +1,7 @@
 import { Modal, Button } from 'react-bootstrap'
-import './ConfirmDeleteModal.scss'
+import './DeleteModal.scss'
 
-export default function ConfirmDeleteModal({ show, onHide, onConfirm }) {
+export default function DeleteModal({ show, onHide, onConfirm }) {
   return (
     <Modal
       show={show}
@@ -9,7 +9,7 @@ export default function ConfirmDeleteModal({ show, onHide, onConfirm }) {
       size="md"
       aria-labelledby="confirm-delete-modal"
       centered
-      dialogClassName="custom-modal"
+      dialogClassName="delete-modal"
     >
       <Modal.Header closeButton>
         <Modal.Title id="confirm-delete-modal">

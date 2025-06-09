@@ -1,4 +1,4 @@
-.custom-modal .modal-content {
+.delete-modal .modal-content {
   background-color: #121212;
   color: #fff;
   border-radius: 16px;
@@ -6,32 +6,32 @@
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
 }
 
-.custom-modal .modal-header,
-.custom-modal .modal-footer {
+.delete-modal .modal-header,
+.delete-modal .modal-footer {
   border: none;
   background-color: #1e1e1e;
 }
 
-.custom-modal .modal-title {
+.delete-modal .modal-title {
   font-size: 24px;
   color: #f87171;
 }
 
-.custom-modal .btn-danger {
+.delete-modal .btn-danger {
   background-color: #dc3545;
   border: none;
   border-radius: 8px;
   padding: 8px 16px;
 }
 
-.custom-modal .btn-secondary {
+.delete-modal .btn-secondary {
   background-color: #6c757d;
   border: none;
   border-radius: 8px;
   padding: 8px 16px;
 }
 
-.custom-modal .btn:hover {
+.delete-modal .btn:hover {
   opacity: 0.9;
 }
 

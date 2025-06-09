@@ -16,6 +16,7 @@
   box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
   padding: 24px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 
   &:hover {
     transform: translateY(-6px);
@@ -92,10 +93,3 @@
         }
     }
 }
-
-// .modal-header .btn-close{
-//   width: 15px;
-//   position: absolute;
-//   right: 15px;
-// }
-
