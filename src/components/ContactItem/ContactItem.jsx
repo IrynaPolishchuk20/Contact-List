@@ -33,8 +33,9 @@ export default function ContactItem(){
 
     const handleConfirmDelete = () => {
         if (contactToDelete) {
-        onDelete(contactToDelete.id)
+        dispatch(deleteContact(contactToDelete.id))
         setContactToDelete(null)
+        setModalShow(false)
         }
     }
     const handleShowInfo = (contact) => {
@@ -54,8 +55,9 @@ export default function ContactItem(){
                         <div className="btnGroup">
                             <Link to={`/edit-contact/${contact.id}` }><button className="contactBtn" >Edit</button></Link>
                             <button className="contactBtn"
-                                onClick={() => {
-                                dispatch(deleteContact(contact.id));
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    handleDeleteClick(contact);
                                 }}>Delete
                             </button>
                         </div>

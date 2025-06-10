@@ -132,15 +132,15 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 contacts: state.contacts.filter(contact => contact.id !== action.playload)
             }  
-        case EDIT_CONTACT:
-            return{
-                ...state,
-                contacts: state.contacts.map(contact => {
-                    if (contact.id === action.playload.id){
-                        return{
-                            ...contact,
-                            ...action.playload.updatedContact
-                        }
+        case EDIT_CONTACT: 
+                    return{
+                        ...state,
+                        contacts: state.contacts.map(contact => {
+                            if (contact.id === action.payload.id) {
+                                return{
+                                    ...contact,
+                                    ...action.payload.updatedContact
+                                }
                     }
                     return contact
                 })
