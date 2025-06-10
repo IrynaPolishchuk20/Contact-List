@@ -1,7 +1,17 @@
 import { Link } from "react-router";
 import './Header.scss'
 
+import { useSelector, useDispatch } from 'react-redux'
+import { setSearchQuery } from '../../redux/actions'
+
 export default function Header() {
+    const dispatch = useDispatch()
+    const search = useSelector(state => state.search.query)
+
+    const handleChange = (e) => {
+        dispatch(setSearchQuery(e.target.value))
+    }
+
     return(
         <header className="container">
             <div className="row containerHeader">
@@ -18,7 +28,9 @@ export default function Header() {
                            </div>
  
                             <form className="d-flex" role="search">
-                                <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                                <input value={search}
+                                    onChange={handleChange}
+                                    className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
                             </form>
                         </div>
                     </nav>

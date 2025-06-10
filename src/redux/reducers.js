@@ -125,26 +125,32 @@ const reducer = (state = initialState, action) => {
         case ADD_CONTACT:
             return{
                 ...state,
-                contacts:[...state.contacts, action.playload]
+                contacts:[...state.contacts, action.payload]
             } 
         case DELETE_CONTACT:
             return{
                 ...state,
-                contacts: state.contacts.filter(contact => contact.id !== action.playload)
+                contacts: state.contacts.filter(contact => contact.id !== action.payload)
             }  
         case EDIT_CONTACT: 
-                    return{
-                        ...state,
-                        contacts: state.contacts.map(contact => {
-                            if (contact.id === action.payload.id) {
-                                return{
-                                    ...contact,
-                                    ...action.payload.updatedContact
-                                }
+            return{
+                  ...state,
+                  contacts: state.contacts.map(contact => {
+                  if (contact.id === action.payload.id) {
+                      return{
+                        ...contact,
+                        ...action.payload.updatedContact
+                      }
                     }
                     return contact
                 })
             }    
+        case 'SET_SEARCH_QUERY':
+            return {
+              ...state,
+              search: action.payload
+            }
+
         default:
             return state
     }

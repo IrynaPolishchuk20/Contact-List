@@ -12,11 +12,11 @@ export default function ContactItem(){
     const contacts = useSelector(state => state.contacts)
     const dispatch = useDispatch()
     
+    const search = useSelector(state => state.search)
+    
     const [modalShow, setModalShow] = useState(false)
     const [contactToDelete, setContactToDelete] = useState(null)
     const [selectedContact, setSelectedContact] = useState(null)
-
-    const search = false
 
     const filteredContacts = search
         ? contacts.filter(contact =>
