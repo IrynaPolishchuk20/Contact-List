@@ -13,18 +13,18 @@ export default function ContactItem(){
     const dispatch = useDispatch()
     
     const search = useSelector(state => state.search)
+    const filterStatus = useSelector(state => state.contactStatus)
+
     
     const [modalShow, setModalShow] = useState(false)
     const [contactToDelete, setContactToDelete] = useState(null)
     const [selectedContact, setSelectedContact] = useState(null)
 
-    const filteredContacts = search
-        ? contacts.filter(contact =>
-            `${contact.firstName} ${contact.lastName} ${contact.phone} ${contact.email} ${contact.status}`
-            .toLowerCase()
-            .includes(search.toLowerCase())
-        )
-        : contacts
+    const filteredContacts = contacts.filter(contact => {
+      const matchesSearch = search ? (`${contact.firstName} ${contact.lastName} ${contact.phone} ${contact.email} ${contact.gender} ${contact.status}`).includes(search) : true;
+      const matchesStatus = filterStatus && filterStatus !== 'all' ? contact.status === filterStatus : true;
+      return matchesSearch && matchesStatus;
+    })
 
     const handleDeleteClick = (contact) => {
         setContactToDelete(contact)

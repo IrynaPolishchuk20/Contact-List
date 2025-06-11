@@ -1,7 +1,9 @@
 import {
     ADD_CONTACT,
     DELETE_CONTACT,
-    EDIT_CONTACT
+    EDIT_CONTACT,
+    SET_SEARCH_QUERY,
+    CONTACT_STATUS
 } from './type'
 
 const initialState = {
@@ -145,12 +147,17 @@ const reducer = (state = initialState, action) => {
                     return contact
                 })
             }    
-        case 'SET_SEARCH_QUERY':
+        case SET_SEARCH_QUERY:
             return {
               ...state,
               search: action.payload
             }
-
+        case CONTACT_STATUS:
+          return{
+            ...state,
+            contactStatus: action.payload
+          }
+          
         default:
             return state
     }

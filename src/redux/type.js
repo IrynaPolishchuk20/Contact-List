@@ -1,3 +1,6 @@
 export const ADD_CONTACT = 'ADD_CONTACT'
 export const DELETE_CONTACT = 'DELETE_CONTACT'
 export const EDIT_CONTACT = 'EDIT_CONTACT'
+export const SET_SEARCH_QUERY = 'SET_SEARCH_QUERY'
+export const CONTACT_STATUS = 'CONTACT_STATUS'
+
