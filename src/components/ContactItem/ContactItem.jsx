@@ -5,7 +5,7 @@ import DeleteModal from '../DeleteModal/DeleteModal'
 import InfoContact from '../InfoContact/InfoContact'
 
 import { useSelector, useDispatch } from "react-redux";
-import { deleteContact } from '../../redux/actions'
+import { deleteContact, toggleFavorite } from '../../redux/actions'
 
 
 export default function ContactItem(){
@@ -46,7 +46,16 @@ export default function ContactItem(){
     <div className='container containerBlock'>
         {filteredContacts.map(contact => (
             <div className='contackBlock' key={contact.id} onClick={() => handleShowInfo(contact)}>
-                <img className="contactImg" src={`https://randomuser.me/api/portraits/${contact.gender}/${contact.avatar}.jpg`} alt=""/>
+                <div  className='position-relative'>
+                    <img className="contactImg" src={`https://randomuser.me/api/portraits/${contact.gender}/${contact.avatar}.jpg`} alt=""/>
+                    <button className='favoriteBtn' onClick={(e) => {
+                            e.stopPropagation();
+                            dispatch(toggleFavorite(contact.id))
+                        }}
+                        >
+                        {contact.favorite ? '♥' : '♡'  }
+                    </button>
+                </div>
                     <div className="contactContent">
                         <h3>{contact.firstName} {contact.lastName}</h3>
                         <p>{contact.email} </p>

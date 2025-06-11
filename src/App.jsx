@@ -11,6 +11,7 @@ import AddContact from './pages/AddContact/AddContact'
 import EditContact from './pages/EditContact/EditContact'
 import NotFound from './pages/NotFound/NotFound'
 import Header from './components/Header/Header'
+import ContactStatuss from './pages/ContactStatuss/ContactStatuss'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
                 <Header/>
                     <Routes>
                       <Route path='/' element={<ContactList />}/>
+                      <Route path='/contact-statuss' element={<ContactStatuss />}/>
                       <Route path='/add-contact' element={<AddContact/>}/>
                       <Route path='/edit-contact/:id' element={<EditContact/>}/>
                       <Route path='*' element={<NotFound/>}/>

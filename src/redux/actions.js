@@ -3,7 +3,11 @@ import {
     DELETE_CONTACT,
     EDIT_CONTACT,
     SET_SEARCH_QUERY,
-    CONTACT_STATUS
+    CONTACT_STATUS,
+    TOGGLE_FAVORITE,
+    ADD_STATUS,
+    EDIT_STATUS,
+    DELETE_STATUS
 } from './type'
 
 export const addContact = (newContact) => {
@@ -36,5 +40,12 @@ export const contactStatus = (status) => {
     return {
         type: CONTACT_STATUS,
         payload: status
+    }
+}
+
+export const toggleFavorite = (id) =>{
+    return{
+        type:TOGGLE_FAVORITE,
+        payload: id
     }
 }

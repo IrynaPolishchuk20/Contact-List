@@ -25,6 +25,9 @@ export default function Header() {
                                 <Link className="navbar-brand" to="/add-contact">
                                     Add Contact
                                 </Link>
+                                <Link className="navbar-brand" to="/contact-statuss">
+                                    Statuss
+                                </Link>
                            </div>
  
                             <form className="d-flex" role="search">

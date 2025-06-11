@@ -20,13 +20,15 @@
 }
 
 
-.list div{
+.list-group li{
+  background-color: rgba(134, 134, 182, 0.5); 
+  color: #fff;
   font-weight: bold;
   font-size: 16px;
   cursor: pointer;
 }
 
 .list span{
-  color: #eee;
+  color: #fff;
   font-family: cursive;
 }
