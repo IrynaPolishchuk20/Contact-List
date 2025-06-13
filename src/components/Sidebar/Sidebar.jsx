@@ -1,6 +1,6 @@
 import './Sidebar.scss'
 import { useSelector, useDispatch } from 'react-redux'
-import { contactStatus } from '../../redux/actions'
+import { setFilter } from '../../redux/actions'
 import { useMemo } from "react";
 
 
@@ -9,19 +9,25 @@ export default function Sidebar() {
     const contacts = useSelector(state => state.contacts)
     const search = useSelector(state => state.search)
     const dispatch = useDispatch()
-    const filterStatus = useSelector(state => state.contactStatus)
+    const filterStatus = useSelector(state => state.setFilter)
     const contactStatuss = useSelector(state => state.contactStatuss)
 
     
     const statusClick = (status) => {     
-        dispatch(contactStatus(status))
+        dispatch(setFilter(status))
     }
 
     const filteredContacts = contacts.filter(contact => {
-        const matchesSearch = search ? (`${contact.firstName} ${contact.lastName} ${contact.phone} ${contact.email} ${contact.gender} ${contact.status}`).includes(search) : true;
-        const matchesStatus = filterStatus && filterStatus !== 'all' ? contact.status === filterStatus : true;
-        return matchesSearch && matchesStatus;
-    });
+    const matchesSearch = search
+      ? (`${contact.firstName} ${contact.lastName} ${contact.phone} ${contact.email} ${contact.gender} ${contact.status}`.toLowerCase().includes(search.toLowerCase()))
+      : true
+
+    const matchesStatus = filterStatus && filterStatus !== 'all'
+      ? contact.status === filterStatus
+      : true
+
+    return matchesSearch && matchesStatus;
+    })
     
     const totalContacts = filteredContacts.length
 

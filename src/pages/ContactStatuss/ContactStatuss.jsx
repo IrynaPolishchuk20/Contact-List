@@ -20,11 +20,11 @@ export default function ContactStatuss(){
       }, [contacts, contactStatuss])
 
     return(
-        <main className="container rounded shadow-lg">
+        <main className="container contactStatuss">
             <div className="row">
                 <div className="col-12">
-                    <Link type="button" className="btn btn-success btn-lg m-2" to={'/contact-statuss/add-contact-status'}>Add +</Link>
-                    <table className="table text-center">
+                    <Link type="button" className="btn neonButton btn-success btn-lg m-2" to={'/contact-statuss/add-status'}>Add +</Link>
+                    <table className="neonTable text-center">
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
@@ -38,8 +38,8 @@ export default function ContactStatuss(){
                         {Object.keys(statusCounts).map((status, index) => (
                             <tr key={index}>
                                 <th scope="row">{++index}</th>
-                                <td className="fs-4 fw-bold">{status.toUpperCase()}</td>
-                                <td className="fs-4 fw-bold" style={{backgroundColor: statusCounts[status].bg}}>{statusCounts[status].bg}</td>
+                                <td className="fw-bold">{status.toUpperCase()}</td>
+                                <td className="statusColorCell" style={{backgroundColor: statusCounts[status].bg}}>{statusCounts[status].bg}</td>
                                 <td className="fs-4 fw-bold">{statusCounts[status].count}</td>
                                 <td>
                                  <div className="btnGroup">

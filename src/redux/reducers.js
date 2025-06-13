@@ -1,10 +1,9 @@
-import { contactStatus } from './actions'
 import {
     ADD_CONTACT,
     DELETE_CONTACT,
     EDIT_CONTACT,
     SET_SEARCH_QUERY,
-    CONTACT_STATUS,
+    SET_FILTER,
     TOGGLE_FAVORITE,
     ADD_STATUS,
     EDIT_STATUS,
@@ -126,11 +125,11 @@ const initialState = {
     ],
     search: '',
     contactStatuss: {
-      work: {count: 0, bg: '#F39F5A'},
-      family: {count: 0, bg: '#AE445A'},
-      private: {count: 0, bg: '#662549'},
-      friends: {count: 0, bg: '#451952'},
-      others: {count: 0, bg: '#00FA9A'},
+      work: {count: 0, bg: '#00f0ff'},
+      family: {count: 0, bg: '#ff00c8'},
+      private: {count: 0, bg: '#ff9900'},
+      friends: {count: 0, bg: '#00ff6a'},
+      others: {count: 0, bg: '#cc00ff'},
     }
 }
 
@@ -164,7 +163,7 @@ const reducer = (state = initialState, action) => {
               ...state,
               search: action.payload
             }
-        case CONTACT_STATUS:
+        case SET_FILTER:
           return{
             ...state,
             contactStatus: action.payload
@@ -174,6 +173,16 @@ const reducer = (state = initialState, action) => {
             ...state,
             contacts: state.contacts.map(contact => contact.id === action.payload ? {...contact, favorite: !contact.favorite} : contact,)
           }
+        case ADD_STATUS: {
+            const { name, bg } = action.payload
+            return {
+                ...state,
+                contactStatuss: {
+                    ...state.contactStatuss,
+                    [name]: { bg, count: 0 },
+                }
+            }
+        }
           
         default:
             return state

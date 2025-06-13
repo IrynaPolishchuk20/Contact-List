@@ -1,0 +1,93 @@
+.neonTable {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(0, 0, 30, 0.5);
+    color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    font-family: cursive;
+ 
+        th, td {
+            padding: 14px 20px;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            vertical-align: middle;
+        }
+
+        thead {
+            background-color: rgba(0, 255, 255, 0.15);
+
+            th {
+            font-size: 1.1rem;
+            color: #e0faff;
+            text-shadow: 0 0 6px #00ffff;
+            }
+        }
+
+        tbody {
+            tr {
+            transition: background 0.3s ease;
+
+            &:hover {
+                background-color: rgba(0, 255, 255, 0.05);
+            }
+
+            td {
+                font-size: 1rem;
+                color: #e0faff;
+            }
+            }
+        }
+}
+
+.statusColorCell {
+  padding: 10px;
+  border-radius: 8px;
+  color: black;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  background-clip: padding-box;
+  transition: 0.3s;
+}
+
+.contactBtn {
+  background: transparent;
+  border: 1px solid #00ffff;
+  color: #00ffff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  margin: 0 5px;
+  transition: 0.3s;
+
+  &:hover {
+    background: #00ffff;
+  }
+}
+
+.btnGroup {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.neonButton {
+  background-color: transparent;
+  border: 2px solid #00ffff;
+  color: #00ffff;
+  font-size: 1.1rem;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 0 10px #00ffff66, 0 0 20px #00ffff33 inset;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #00ffff;
+    color: #000014;
+    box-shadow: 0 0 12px #00ffffaa, 0 0 30px #00ffff66;
+    border: none;
+  }
+}

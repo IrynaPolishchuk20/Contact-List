@@ -3,7 +3,7 @@ import {
     DELETE_CONTACT,
     EDIT_CONTACT,
     SET_SEARCH_QUERY,
-    CONTACT_STATUS,
+    SET_FILTER,
     TOGGLE_FAVORITE,
     ADD_STATUS,
     EDIT_STATUS,
@@ -36,9 +36,9 @@ export const setSearchQuery = (query) => ({
   payload: query
 })
 
-export const contactStatus = (status) => {
+export const setFilter = (status) => {
     return {
-        type: CONTACT_STATUS,
+        type: SET_FILTER,
         payload: status
     }
 }
@@ -49,3 +49,8 @@ export const toggleFavorite = (id) =>{
         payload: id
     }
 }
+
+export const addStatus = (newStatus) => ({
+    type: ADD_STATUS,
+    payload: newStatus
+})

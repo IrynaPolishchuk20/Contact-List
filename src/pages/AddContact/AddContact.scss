@@ -3,11 +3,10 @@
   flex-direction: column;     
   align-items: center;
 
-  h1{
-    font-size: 32px;
-    margin-bottom: 10px;
-    text-align: center;
-    color: #fff;
+  h2{
+    font-weight: bold;
+    color: cyan;
+    text-shadow: 0 0 10px cyan;
   }
 
   label{
