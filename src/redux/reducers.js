@@ -174,7 +174,7 @@ const reducer = (state = initialState, action) => {
             contacts: state.contacts.map(contact => contact.id === action.payload ? {...contact, favorite: !contact.favorite} : contact,)
           }
         case ADD_STATUS: {
-            const { name, bg } = action.payload
+          const { name, bg } = action.payload
             return {
                 ...state,
                 contactStatuss: {
@@ -183,7 +183,29 @@ const reducer = (state = initialState, action) => {
                 }
             }
         }
-          
+        case DELETE_STATUS: {
+          const newContactStatussAfterDelete = {...state.contactStatuss}
+          const deleteContactStatus = newContactStatussAfterDelete[action.payload].count
+          delete newContactStatussAfterDelete[action.payload]
+
+          const contactsAfterStatusDelete = state.contacts.map(contact => {
+            if(contact.status === action.payload){
+              return{...contact, status: 'others'}
+            }
+            return contact
+          })
+
+          if(newContactStatussAfterDelete['others']){
+            newContactStatussAfterDelete['others'].count += deleteContactStatus
+          }
+
+          return{
+            ...state,
+            contactStatuss: newContactStatussAfterDelete,
+            contacts: contactsAfterStatusDelete
+          }
+        }
+
         default:
             return state
     }

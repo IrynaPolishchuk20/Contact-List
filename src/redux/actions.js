@@ -54,3 +54,10 @@ export const addStatus = (newStatus) => ({
     type: ADD_STATUS,
     payload: newStatus
 })
+
+export const deleteStatus = (status) =>{
+    return{
+        type: DELETE_STATUS,
+        payload: status
+    }
+}

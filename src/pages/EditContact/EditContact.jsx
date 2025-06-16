@@ -26,7 +26,7 @@ export default function EditContact(){
     return(
         <div className="addContact">
             <div className="modal-header">
-                <h1>Edit Contact</h1>
+                <h2>Edit Contact</h2>
                     <Formik initialValues={initialValues} validationSchema={contactValidationSchema} onSubmit={handleSubmit}>
                         {({isSubmitting}) => (
                             <Form>

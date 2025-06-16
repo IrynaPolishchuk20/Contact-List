@@ -1,7 +1,8 @@
 import './ContactStatuss.scss'
 import { useMemo } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router";
+import { deleteStatus } from '../../redux/actions';
 
 
 
@@ -9,6 +10,7 @@ import { Link } from "react-router";
 export default function ContactStatuss(){
     const contactStatuss = useSelector(state => state.contactStatuss)
     const contacts = useSelector(state => state.contacts)
+    const dispatch = useDispatch()
 
     const statusCounts = useMemo(() => {
         const counts = {...contactStatuss}
@@ -18,6 +20,10 @@ export default function ContactStatuss(){
         });
         return counts
       }, [contacts, contactStatuss])
+
+    const handleDeleteStatus = (status) =>{
+        dispatch(deleteStatus(status))
+    }
 
     return(
         <main className="container contactStatuss">
@@ -47,7 +53,7 @@ export default function ContactStatuss(){
                                     <button className="contactBtn" >Edit</button>
                                     </Link>
                                     <button className="contactBtn"
-                                        onClick={() => { }}>
+                                        onClick={() => {handleDeleteStatus(status)}}>
                                             Delete
                                     </button>
                                 </div>
