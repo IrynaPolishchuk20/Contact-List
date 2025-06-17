@@ -1,0 +1,23 @@
+.editStatus {
+      h2 {
+        font-weight: bold;
+        color: cyan;
+        text-shadow: 0 0 10px cyan;
+    }
+
+    input[type="text"] {
+        width: 250px;
+        height: 40px;
+        padding: 2px;
+        border: none;
+        border-radius: 10px;
+        background-color: white;
+        cursor: pointer;
+
+            &:focus {
+                box-shadow: 0 0 10px cyan;
+                border-color: cyan;
+            }
+    }
+}
+

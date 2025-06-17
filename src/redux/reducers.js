@@ -6,8 +6,8 @@ import {
     SET_FILTER,
     TOGGLE_FAVORITE,
     ADD_STATUS,
-    EDIT_STATUS,
-    DELETE_STATUS
+    DELETE_STATUS,
+    EDIT_STATUS
   } from './type'
 
 const initialState = {
@@ -205,6 +205,37 @@ const reducer = (state = initialState, action) => {
             contacts: contactsAfterStatusDelete
           }
         }
+
+        case EDIT_STATUS: {
+          const { oldStatus, updatedData } = action.payload
+          const newStatus = updatedData.name
+          const newBg = updatedData.bg
+
+          const updatedStatuss = { ...state.contactStatuss }
+
+          if (oldStatus !== newStatus) {
+              updatedStatuss[newStatus] = { ...updatedStatuss[oldStatus], bg: newBg }
+              delete updatedStatuss[oldStatus]
+          } else {
+              updatedStatuss[oldStatus] = { ...updatedStatuss[oldStatus], bg: newBg }
+          }
+
+          const updatedContacts = state.contacts.map(contact => {
+              if (contact.status === oldStatus) {
+                  return {
+                      ...contact,
+                      status: newStatus
+                  }
+              }
+              return contact
+          });
+
+          return {
+              ...state,
+              contactStatuss: updatedStatuss,
+              contacts: updatedContacts
+              }
+          }
 
         default:
             return state

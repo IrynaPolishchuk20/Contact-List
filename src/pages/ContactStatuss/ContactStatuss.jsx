@@ -49,7 +49,7 @@ export default function ContactStatuss(){
                                 <td className="fs-4 fw-bold">{statusCounts[status].count}</td>
                                 <td>
                                  <div className="btnGroup">
-                                    <Link to={`/edit-contact` }>
+                                    <Link to={`/contact-statuss/edit-status/${status}`}>
                                     <button className="contactBtn" >Edit</button>
                                     </Link>
                                     <button className="contactBtn"

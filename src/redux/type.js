@@ -5,6 +5,5 @@ export const SET_SEARCH_QUERY = 'SET_SEARCH_QUERY'
 export const SET_FILTER = 'SET_FILTER'
 export const TOGGLE_FAVORITE = 'TOGGLE_FAVORITE'   
 export const ADD_STATUS = 'ADD_STATUS'
-
-export const EDIT_STATUS = 'EDIT_STATUS'
 export const DELETE_STATUS = 'DELETE_STATUS'
+export const EDIT_STATUS = 'EDIT_STATUS'
