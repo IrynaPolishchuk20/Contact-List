@@ -173,36 +173,39 @@ const reducer = (state = initialState, action) => {
             ...state,
             contacts: state.contacts.map(contact => contact.id === action.payload ? {...contact, favorite: !contact.favorite} : contact,)
           }
-        case ADD_STATUS: {
-          const { name, bg } = action.payload
-            return {
-                ...state,
-                contactStatuss: {
-                    ...state.contactStatuss,
-                    [name]: { bg, count: 0 },
-                }
+        case ADD_STATUS:
+          if (state.contactStatuss[action.payload.status]) {
+            console.worn(`Status "${action.payload.status}" already exists.`)
+            return state
+          }
+          return {
+            ...state,
+            contactStatuss: {
+              ...state.contactStatuss,
+              [action.payload.status]: { count: 0, bg: action.payload.color },
             }
-        }
-        case DELETE_STATUS: {
-          const newContactStatussAfterDelete = {...state.contactStatuss}
+          }
+
+        case DELETE_STATUS:{
+          const newContactStatussAfterDelete = { ...state.contactStatuss }
           const deleteContactStatus = newContactStatussAfterDelete[action.payload].count
           delete newContactStatussAfterDelete[action.payload]
 
-          const contactsAfterStatusDelete = state.contacts.map(contact => {
-            if(contact.status === action.payload){
-              return{...contact, status: 'others'}
+          const contactsAfterStatusDelete = state.contacts.map((contact) => {
+            if (contact.status === action.payload) {
+              return { ...contact, status:'others' }
             }
             return contact
           })
 
-          if(newContactStatussAfterDelete['others']){
-            newContactStatussAfterDelete['others'].count += deleteContactStatus
+          if (newContactStatussAfterDelete['others']) {
+            newContactStatussAfterDelete['others'].count += deleteContactStatus;
           }
 
-          return{
+          return {
             ...state,
             contactStatuss: newContactStatussAfterDelete,
-            contacts: contactsAfterStatusDelete
+            contacts: contactsAfterStatusDelete,
           }
         }
 

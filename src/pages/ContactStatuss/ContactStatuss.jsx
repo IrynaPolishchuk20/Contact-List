@@ -48,15 +48,17 @@ export default function ContactStatuss(){
                                 <td className="statusColorCell" style={{backgroundColor: statusCounts[status].bg}}>{statusCounts[status].bg}</td>
                                 <td className="fs-4 fw-bold">{statusCounts[status].count}</td>
                                 <td>
-                                 <div className="btnGroup">
-                                    <Link to={`/contact-statuss/edit-status/${status}`}>
-                                    <button className="contactBtn" >Edit</button>
-                                    </Link>
-                                    <button className="contactBtn"
-                                        onClick={() => {handleDeleteStatus(status)}}>
-                                            Delete
-                                    </button>
-                                </div>
+                                    <div className="btnGroup">
+                                        <Link to={`/contact-statuss/edit-status/${status}`}>
+                                        <button className="contactBtn" >Edit</button>
+                                        </Link>
+                                        <button className='contactBtn'
+                                            type='button'
+                                            disabled={status === 'others'}
+                                            onClick={() => {handleDeleteStatus(status)}}>
+                                                Delete
+                                        </button>
+                                    </div>
                                 </td>
                             </tr>
                         ))}
