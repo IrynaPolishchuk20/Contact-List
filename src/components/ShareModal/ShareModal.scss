@@ -1,0 +1,79 @@
+.modal-overlay{
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn{
+  from{ opacity: 0; }
+  to{ opacity: 1; }
+}
+
+.modal-content{
+  background-color: #121212;
+  color: #fff;
+  border-radius: 16px;
+  padding: 25px 20px;
+  border-radius: 12px;
+  width: 320px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  text-align: center;
+  animation: scaleIn 0.3s ease;
+}
+
+@keyframes scaleIn{
+  from{ transform: scale(0.9); opacity: 0; }
+  to{ transform: scale(1); opacity: 1; }
+}
+
+.icon-group{
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+
+  .icon{
+    font-size: 30px;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+
+  .icon:hover{
+    transform: scale(1.2);
+  }
+
+  .viber{ color: #7360f2; }
+  .telegram{ color: #0088cc; }
+  .gmail{ color: #d44638; }
+  .instagram{ color: #e1306c; }
+}
+
+.modal-buttons{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  background: none;
+
+  .btn{
+    flex: 1;
+    margin: 0 5px;
+    padding: 8px 12px;
+    color:  #00cccc;
+    background: none;
+    border-color:  #00cccc;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+
+    &:hover{
+      background:  #00cccc;
+      color: black;
+    }
+  }
+}

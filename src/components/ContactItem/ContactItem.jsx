@@ -3,9 +3,14 @@ import { Link } from 'react-router'
 import { useState } from 'react'
 import DeleteModal from '../DeleteModal/DeleteModal'
 import InfoContact from '../InfoContact/InfoContact'
+import ShareModal from '../ShareModal/ShareModal'
 
 import { useSelector, useDispatch } from "react-redux";
 import { deleteContact, toggleFavorite } from '../../redux/actions'
+
+import phoneCall from './img/phoneCall.png'
+import share from './img/share.png'
+
 
 
 export default function ContactItem(){
@@ -42,6 +47,8 @@ export default function ContactItem(){
         setSelectedContact(contact)
     }
 
+    const [shareContact, setShareContact] = useState(null)
+
     return(
     <div className='container containerBlock'>
         {filteredContacts.map(contact => (
@@ -61,6 +68,19 @@ export default function ContactItem(){
                         <p>{contact.email} </p>
                         <p>{contact.phone} </p>
                         <p>{contact.status} </p>
+                        <div className='callShare'>
+                            <a href={`tel:${contact.phone}`} 
+                                onClick={(e) => e.stopPropagation()}>
+                                <img className='phoneCall' src={phoneCall} alt="phoneCall" />
+                            </a>
+                            <p onClick={(e) => {
+                                e.stopPropagation()
+                                setShareContact(contact)
+                            }}> 
+                                <img className='share' src={share} alt="share" /> 
+                            </p>
+                        </div>
+                        
                         <div className="btnGroup">
                             <Link to={`/edit-contact/${contact.id}` }><button className="contactBtn" >Edit</button></Link>
                             <button className="contactBtn"
@@ -84,6 +104,12 @@ export default function ContactItem(){
             show={!!selectedContact}
             onHide={() => setSelectedContact(null)}
             contact={selectedContact}
+        />
+
+        <ShareModal
+            show={!!shareContact}
+            onHide={() => setShareContact(null)}
+            contact={shareContact}
         />
 
     </div>
