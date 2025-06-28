@@ -11,7 +11,7 @@ export default function DeleteModal({ show, onHide, onConfirm }) {
       centered
       dialogClassName="delete-modal"
     >
-      <Modal.Header closeButton>
+      <Modal.Header>
         <Modal.Title id="confirm-delete-modal">
           Delete confirmation
         </Modal.Title>

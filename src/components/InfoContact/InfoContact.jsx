@@ -12,7 +12,7 @@ export default function InfoContact({ show, onHide, contact }) {
         centered 
         dialogClassName="info-modal fade-in-modal"
     >
-      <Modal.Header closeButton>
+      <Modal.Header>
         <Modal.Title>Contact information</Modal.Title>
       </Modal.Header>
       <Modal.Body>

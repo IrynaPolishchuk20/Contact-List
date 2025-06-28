@@ -1,5 +1,11 @@
 .editStatus {
-      h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;     
+    
+
+    h2 {
         font-weight: bold;
         color: cyan;
         text-shadow: 0 0 10px cyan;

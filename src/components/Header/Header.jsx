@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { NavLink } from "react-router";
 import './Header.scss'
 
 import { useSelector, useDispatch } from 'react-redux'
@@ -19,15 +19,21 @@ export default function Header() {
                     <nav className="navbar">
                         <div className="container-fluid">
                            <div className="navbar-brand">
-                                <Link className="navbar-brand" to="/">
+                                <NavLink 
+                                    className={({ isActive }) => isActive ? 'navbar-brand active' : 'navbar-brand'} 
+                                    to='/'>
                                     Contact List
-                                </Link>
-                                <Link className="navbar-brand" to="/add-contact">
+                                </NavLink>
+                                <NavLink 
+                                    className={({ isActive }) => isActive ? 'navbar-brand active' : 'navbar-brand'} 
+                                    to='/add-contact'>
                                     Add Contact
-                                </Link>
-                                <Link className="navbar-brand" to="/contact-statuss">
+                                </NavLink>
+                                <NavLink 
+                                    className={({ isActive }) => isActive ? 'navbar-brand active' : 'navbar-brand'} 
+                                    to='/contact-statuss'>
                                     Statuss
-                                </Link>
+                                </NavLink>
                            </div>
  
                             <form className="d-flex" role="search">

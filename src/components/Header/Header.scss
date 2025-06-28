@@ -5,12 +5,15 @@
     border: 2px solid rgba(0, 255, 255, 0.3);
     
     .navbar-brand{
-        color: #fff;
-        &:hover, 
-        &:focus{
-            color: #00ffff;
-        }
+        color: aliceblue;
     }
+    
+    .navbar-brand .active {
+        font-weight: bold;
+        text-decoration: underline;
+        color: rgba(0, 255, 255);
+    }
+
 
     .form-control{
        border: none;
