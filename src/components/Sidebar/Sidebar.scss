@@ -11,7 +11,7 @@
   background-color: rgba(134, 134, 182, 0.5); 
   border: 2px solid rgba(0, 255, 255, 0.3);
 
-    .All{
+    .all{
       color: #00ffff;
       text-shadow: 0 0 5px #00ffff;
       padding-bottom: 10px;
@@ -31,4 +31,11 @@
 .list span{
   color: #fff;
   font-family: cursive;
+}
+
+.list-group-item.active {
+  background-color: #97bbef;
+  color: rgb(50, 50, 50);
+  font-weight: bold;
+  border: none;
 }

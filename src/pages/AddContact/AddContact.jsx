@@ -9,6 +9,8 @@ import { useDispatch } from "react-redux"
 import { addContact } from '../../redux/actions'
 import { useSelector } from 'react-redux'
 import ReactInputDateMask from 'react-input-date-mask'
+import { IMaskInput } from 'react-imask'
+
 
 export default function AddContact() {
     const navigate = useNavigate()
@@ -75,19 +77,58 @@ export default function AddContact() {
 
                                     <div>
                                         <label htmlFor="phone">Phone</label>
-                                        <Field type='text' name='phone' id='phone'/>
+                                        <Field name="phone" >
+                                            {({ field, form }) => (
+                                                <IMaskInput
+                                                {...field}
+                                                mask="+{38} (000) 000-00-00"
+                                                definitions={{ '0': /[0-9]/ }}
+                                                unmask={false}
+                                                placeholder="+38 (0__) ___-__-__"
+                                                autoComplete="new-password"
+                                                onAccept={(value) => form.setFieldValue(field.name, value)}
+                                                id="phone"
+                                                />
+                                            )}
+                                        </Field>
                                         <ErrorMessage name='phone' component='p' className='error'/>
                                     </div>
 
                                     <div>
                                         <label htmlFor="viber">Viber</label>
-                                        <Field type="text" name="viber" id="viber" />
+                                        <Field name="Viber" >
+                                            {({ field, form }) => (
+                                                <IMaskInput
+                                                {...field}
+                                                mask="+{38} (000) 000-00-00"
+                                                definitions={{ '0': /[0-9]/ }}
+                                                unmask={false}
+                                                placeholder="+38 (0__) ___-__-__"
+                                                autoComplete="new-password"
+                                                onAccept={(value) => form.setFieldValue(field.name, value)}
+                                                id="Viber"
+                                                />
+                                            )}
+                                        </Field>
                                         <ErrorMessage name="viber" component="p" className="error" />
                                     </div>
 
                                     <div>
                                         <label htmlFor="telegram">Telegram</label>
-                                        <Field type="text" name="telegram" id="telegram" />
+                                        <Field name="telegram" >
+                                            {({ field, form }) => (
+                                                <IMaskInput
+                                                {...field}
+                                                mask="+{38} (000) 000-00-00"
+                                                definitions={{ '0': /[0-9]/ }}
+                                                unmask={false}
+                                                placeholder="+38 (0__) ___-__-__"
+                                                autoComplete="new-password"
+                                                onAccept={(value) => form.setFieldValue(field.name, value)}
+                                                id="telegram"
+                                                />
+                                            )}
+                                        </Field>
                                         <ErrorMessage name="telegram" component="p" className="error" />
                                     </div>
 
