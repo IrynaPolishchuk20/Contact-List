@@ -65,8 +65,11 @@ export default function ContactItem(){
                 </div>
                     <div className="contactContent">
                         <h3>{contact.firstName} {contact.lastName}</h3>
+                        <p>{contact.birthday}</p>
                         <p>{contact.email} </p>
                         <p>{contact.phone} </p>
+                        {contact.viber && <p><strong>Viber:</strong> {contact.viber}</p>}
+                        {contact.telegram && <p><strong>Telegram:</strong> {contact.telegram}</p>}
                         <p>{contact.status} </p>
                         <div className='callShare'>
                             <a href={`tel:${contact.phone}`} 

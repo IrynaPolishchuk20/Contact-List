@@ -3,11 +3,10 @@
   flex-direction: column;     
   align-items: center;
 
-  h1{
-    font-size: 32px;
-    margin-bottom: 10px;
-    text-align: center;
-    color: #fff;
+  h2{
+    font-weight: bold;
+    color: cyan;
+    text-shadow: 0 0 10px cyan
   }
 
   label{
@@ -27,13 +26,19 @@
     font-size: 16px;
   }
 
-  .checkbox{
-    display: flex;
-    align-items: center;
-    justify-content: center; 
-    gap: 10px;
-    margin-bottom: 20px;
-  }
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+
+      .checkbox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+}
 
   .error{
     color: #e95757;
@@ -43,23 +48,28 @@
     font-style: italic;
   }
 
-  button{
-    background-color: #6366f1;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 10px;
-    font-size: 18px;
-    cursor: pointer;
-    width: 100%;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+  .form-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+      button {
+            grid-column: span 2;
+            width: 200px;
+            background: none;
+            color: cyan;
+            padding: 12px 20px;
+            border-color: cyan;
+            border-radius: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
 
-      &:hover,
-      &:focus{
-        background-color: #4f46e5;
-        transform: translateY(-2px);
+            &:hover,
+            &:focus {
+              background-color: cyan;
+              color: #1a1a2e;
+              transform: translateY(-2px);
+            }
       }
   }
-
- 
 }
