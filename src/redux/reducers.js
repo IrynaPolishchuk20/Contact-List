@@ -174,15 +174,15 @@ const reducer = (state = initialState, action) => {
             contacts: state.contacts.map(contact => contact.id === action.payload ? {...contact, favorite: !contact.favorite} : contact,)
           }
         case ADD_STATUS:
-          if (state.contactStatuss[action.payload.status]) {
-            console.worn(`Status "${action.payload.status}" already exists.`)
+          if (state.contactStatuss[action.payload.name]) {
+            console.warn(`Status "${action.payload.name}" already exists.`)
             return state
           }
           return {
             ...state,
             contactStatuss: {
               ...state.contactStatuss,
-              [action.payload.status]: { count: 0, bg: action.payload.color },
+              [action.payload.name]: { count: 0, bg: action.payload.bg },
             }
           }
 

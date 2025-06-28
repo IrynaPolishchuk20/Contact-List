@@ -23,7 +23,7 @@ export default function InfoContact({ show, onHide, contact }) {
             className="contact-avatar"
           />
           <h4>{contact.firstName} {contact.lastName}</h4>
-          <p><strong>Birthday:</strong> {contact.birthday}</p>
+          {contact.birthday && <p><strong>Birthday:</strong> {contact.birthday}</p>}
           <p><strong>Email:</strong> {contact.email}</p>
           <p><strong>Phone:</strong> {contact.phone}</p>
           {contact.viber && <p><strong>Viber:</strong> {contact.viber}</p>}

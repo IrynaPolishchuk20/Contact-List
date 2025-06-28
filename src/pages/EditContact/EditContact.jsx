@@ -25,6 +25,7 @@ export default function EditContact(){
         navigate('/')
     }
 
+    const statuses = useSelector(state => state.contactStatuss)
     return(
         <div className="addContact">
             <div className="modal-header">
@@ -97,10 +98,11 @@ export default function EditContact(){
                                         <label htmlFor="status">Status</label>
                                         <Field as="select" name="status">
                                             <option value="">Choose status</option>
-                                            <option value="work">Work</option>
-                                            <option value="family">Family</option>
-                                            <option value="friends">Friends</option>
-                                            <option value="others">Others</option>
+                                            {Object.keys(statuses).map((key) => (
+                                                <option key={key} value={key}>
+                                                {key}
+                                            </option>
+                                            ))}
                                         </Field>
                                         <ErrorMessage name="status" component="p" className="error" />
                                     </div>
