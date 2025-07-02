@@ -41,14 +41,14 @@ const contacts = useSelector(state => state.contacts)
   
  
    return(
-        <aside className="container">
-          <div className="row containerSidebar">
+        <aside className="container containerSidebar">
+          <div className="row">
             <div className="col-12">
               <div className="contacts-labels">
                 <div className="fs-4 mb-5 mt-4 all" onClick={() => statusClick('all')}>
                             All contacts: <span className="fs-5">{totalContacts}</span>
                 </div>
-                <ul className="list-group mb-3">
+                <ul className="list-group fs-5 mb-3">
                   {
                     Object.keys(statusCounts).map(status => (
                       <li 

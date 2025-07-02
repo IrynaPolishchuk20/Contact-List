@@ -45,7 +45,13 @@ export default function ContactStatuss(){
                             <tr key={index}>
                                 <th scope="row">{++index}</th>
                                 <td className="fw-bold">{status.toUpperCase()}</td>
-                                <td className="statusColorCell" style={{backgroundColor: statusCounts[status].bg}}>{statusCounts[status].bg}</td>
+                                <td className="statusColorCell">
+                                    <div
+                                        className="colorCircle"
+                                        style={{ backgroundColor: statusCounts[status].bg }}
+                                        title={statusCounts[status].bg}
+                                    ></div>
+                                </td>
                                 <td className="fs-4 fw-bold">{statusCounts[status].count}</td>
                                 <td>
                                     <div className="btnGroup">

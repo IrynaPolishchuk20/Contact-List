@@ -6,6 +6,7 @@
       font-weight: bold;
       color: cyan;
       text-shadow: 0 0 10px cyan;
+      text-align: center;
     }
 
     label{
@@ -37,18 +38,28 @@
         grid-template-columns: 1fr 1fr;
         gap: 20px;
 
+        @media screen and (max-width: 768px) {
+          grid-template-columns: 1fr; 
+          gap: 15px;
+        }
           .checkbox {
           display: flex;
           justify-content: center;
           align-items: center;
           gap: 10px;
           margin-top: 10px;
+
+          @media screen and (max-width: 768px) {
+            flex-direction: column;
+            align-items: flex-start;
+          }
         }
       }
   .form-actions {
     display: flex;
     justify-content: center;
     margin-top: 20px;
+
       button {
             grid-column: span 2;
             width: 200px;
@@ -67,6 +78,10 @@
               color: #1a1a2e;
               transform: translateY(-2px);
             }
+
+             @media screen and (max-width: 480px) {
+                width: 100%;
+              }
       }
   }
 }

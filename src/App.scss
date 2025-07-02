@@ -70,4 +70,14 @@
   width: 600px;
   margin: 50px auto;
   font-family: Arial, sans-serif;
+
+    @media (max-width: 768px) {
+      width: 90%;
+      padding: 30px;
+    }
+
+    @media (max-width: 480px) {
+      width: 95%;
+      padding: 20px;
+    }
 }

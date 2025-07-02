@@ -43,7 +43,7 @@ export default function AddContact() {
             <div className="modal-header">
                 <h2>Add New Contact</h2>
                     <Formik initialValues={initialValues} validationSchema={contactValidationSchema} onSubmit={handleSubmit}>
-                        {({values, setFieldValue, isSubmitting}) => (
+                        {({isSubmitting}) => (
                             <Form>
                                 <div className="form-grid">
                                     <div>
